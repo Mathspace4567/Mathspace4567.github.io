@@ -20,7 +20,6 @@ javascript:(function(){
     style.innerHTML = `
         #semag-panel { position: fixed; top: 0; right: 0; width: 45%; height: 100%; background: #fff; z-index: 999999; box-shadow: -5px 0 15px rgba(0,0,0,0.3); border-left: 2px solid #ccc; display: none; }
         #semag-panel iframe { width: 100%; height: 100%; border: none; }
-        #semag-close { position: absolute; top: 10px; left: -40px; width: 35px; height: 35px; background: #e74c3c; color: #fff; text-align: center; line-height: 35px; font-weight: bold; cursor: pointer; border-radius: 4px 0 0 4px; font-family: sans-serif; z-index: 1000000; }
         .semag-icon-span { display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 1.2em; vertical-align: middle; }
     `;
     document.head.appendChild(style);
@@ -74,26 +73,19 @@ javascript:(function(){
     var panel = document.createElement('div');
     panel.id = 'semag-panel';
     
-    var closeBtn = document.createElement('div');
-    closeBtn.id = 'semag-close';
-    closeBtn.textContent = 'X';
-    
     var iframe = document.createElement('iframe');
     iframe.src = 'https://mathspace4567.github.io/login.html';
     
-    panel.appendChild(closeBtn);
     panel.appendChild(iframe);
     document.body.appendChild(panel);
     
     newItem.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        panel.style.display = 'block';
-    });
-    
-    closeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        panel.style.display = 'none';
+        if (panel.style.display === 'block') {
+            panel.style.display = 'none';
+        } else {
+            panel.style.display = 'block';
+        }
     });
 })();
