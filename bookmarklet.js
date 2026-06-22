@@ -18,7 +18,7 @@ javascript:(function(){
     
     var style = document.createElement('style');
     style.innerHTML = `
-        #semag-panel { position: fixed; top: 0; right: 0; width: 45%; height: 100%; background: #fff; z-index: 999999; box-shadow: -5px 0 15px rgba(0,0,0,0.3); border-left: 2px solid #ccc; display: none; }
+        #semag-panel { position: fixed; top: 0; right: 0; width: 65%; height: 100%; background: #fff; z-index: 999999; box-shadow: -5px 0 15px rgba(0,0,0,0.3); border-left: 2px solid #ccc; display: none; }
         #semag-panel iframe { width: 100%; height: 100%; border: none; }
         .semag-icon-span { display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 1.2em; vertical-align: middle; }
     `;
